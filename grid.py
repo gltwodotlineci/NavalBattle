@@ -3,4 +3,4 @@ class Grid:
         self.width = width
 
     def create_grid(self):
-        pass
+        return [['(:)'] * self.width for i in range(self.width)]
