@@ -1,6 +1,6 @@
 class Ship:
-    def __init__(self, grid_dim, start_point, end_point):
-            self.grid_dim = grid_dim
+    def __init__(self, grid, start_point, end_point):
+            self.grid = grid
             self.start_point = start_point
             self.end_point = end_point
 

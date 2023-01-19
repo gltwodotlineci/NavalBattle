@@ -4,6 +4,12 @@ from game import Game
 from player import Player
 from fight import Fighting
 
+Game.start_game()
+
+dimention_game = Game.choosing()
+player1 = Player(Game.name_players()[0], Grid(dimention_game).create_grid())
+player2 = Player(Game.name_players()[1], Grid(dimention_game).create_grid())
+
 
 def create_ships():
     global ship_start, ship_end
@@ -25,6 +31,6 @@ def create_ships():
             Ship(player.grid, ship_start[0:2], ship_end[0:2]).creat_ship()
             ship_start, ship_end = [], []
 
-creat_ships()
+create_ships()
 
 Fighting(player1, player2, dimention_game).fighting()
