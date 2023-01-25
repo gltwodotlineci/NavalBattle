@@ -11,6 +11,7 @@ class Attack:
             self.grid[self.coordinates[0]][self.coordinates[1]] = "-No"
         else:
             self.grid[self.coordinates[0]][self.coordinates[1]] = "[#]"
+        '''
         a_f = list(letters[:self.grid_dim])
         num = iter(range(1,(self.grid_dim+1)))
         print("     " + "   ".join(a_f))
@@ -18,4 +19,5 @@ class Attack:
             print(" ", next(num), end = " ")
             print(" ".join(row))
 
+        '''
         return self.grid

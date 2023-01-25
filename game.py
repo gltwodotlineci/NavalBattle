@@ -32,5 +32,3 @@ class Game:
 
     def name_players():
         return [name, name2]
-
-

@@ -33,4 +33,4 @@ def create_ships():
 
 create_ships()
 
-Fighting(player1, player2, dimention_game).fighting()
+Fighting(player1, player2, dimention_game).player_hit()
