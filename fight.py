@@ -1,5 +1,6 @@
 from attack import Attack
 from string import ascii_uppercase as letters
+from interact_conditions import InteractConditions
 
 
 class Fighting:
@@ -72,13 +73,15 @@ class Fighting:
         count = 0
         x_show, y_show = [], []
         while self.succes != True:
-            if count > 0:
-                self.show_your_own_grid(self.gamer2.name,y)
-
             gamers = [self.gamer2, self.gamer1]
             for index, hit in enumerate(gamers):
+                if count > 0:
+                    if index == 0:
+                        self.show_your_own_grid(self.gamer2.name,y)
+                    else:
+                        self.show_your_own_grid(self.gamer1.name,x)
                 for j in range(1,3):
-                    ele = int(input(hit.name+" Choose the coordinate "+str(j)+" of your missile attack "))
+                    ele = InteractConditions.missile_conditions(hit.name, self.dimention, j)
                     self.missile_coordinate.append(ele)
                 if index == 0:
 
@@ -91,8 +94,6 @@ class Fighting:
                         break
 
                 else:
-                    if count > 0:
-                        self.show_your_own_grid(self.gamer1.name,x)
                     y = Attack(self.gamer2.grid, self.missile_coordinate).result_attack()
                     self.show_ennemy_grid(y, y_show)
                     y_show = []
