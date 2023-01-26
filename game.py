@@ -27,6 +27,9 @@ class Game:
         name2 = input("Hello the player 2, what's your name? ")
         accept_dim = input("Welcome "+name2+", if you accept the dimention type 'Yes' ")
         if accept_dim != "Yes":
+            print(" ")
+            print("OK, You can start over from the begining than")
+            print(" ___________________________")
             return False
 
 

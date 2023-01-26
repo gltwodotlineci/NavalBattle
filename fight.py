@@ -10,7 +10,20 @@ class Fighting:
         self.missile_coordinate = []
         self.succes = False
 
- 
+    def recreate_grid(self,new_grid):
+        mat = []
+        while new_grid != []:
+            mat.append(new_grid[:self.dimention])
+            new_grid = new_grid[self.dimention:]
+        a_f = list(letters[:self.dimention])
+        num = iter(range(1,(self.dimention+1)))
+        print("Your ennemy gamefield!")
+        print("     " + "   ".join(a_f))
+        for row in mat:
+            print(" ", next(num), end = " ")
+            print(" ".join(row))
+
+
     def show_ennemy_grid(self, var1, var2):
         count = 0
         for r in var1:
@@ -24,16 +37,25 @@ class Fighting:
         if count == 0:
             self.succes = True
 
-        mat = []
-        while var2 != []:
-            mat.append(var2[:self.dimention])
-            var2 = var2[self.dimention:]
-        a_f = list(letters[:self.dimention])
-        num = iter(range(1,(self.dimention+1)))
-        print("     " + "   ".join(a_f))
-        for row in mat:
-            print(" ", next(num), end = " ")
-            print(" ".join(row))
+        self.recreate_grid(var2)
+
+    def show_your_own_grid(self, player, grid):
+        print(" ---____----___---")
+        print("Hi "+player+" Do you want to see your own game field?")
+        print(" write 'yes' if you want to see your game field and 'no' if not ")
+        answer = input("yes/no ")
+        if answer == "yes":
+            a_f = list(letters[:self.dimention])
+            num = iter(range(1,(self.dimention+1)))
+            print( " YOUR OWN GAMEFIELD")
+            print("     " + "   ".join(a_f))
+            for row in grid:
+                print(" ", next(num), end = " ")
+                print(" ".join(row))
+            print("    ")
+        else:
+            pass
+
 
 
     def check_win(self, player):
@@ -47,27 +69,37 @@ class Fighting:
 
 
     def player_hit(self):
+        count = 0
         x_show, y_show = [], []
         while self.succes != True:
+            if count > 0:
+                self.show_your_own_grid(self.gamer2.name,y)
+
             gamers = [self.gamer2, self.gamer1]
             for index, hit in enumerate(gamers):
                 for j in range(1,3):
                     ele = int(input(hit.name+" Choose the coordinate "+str(j)+" of your missile attack "))
                     self.missile_coordinate.append(ele)
                 if index == 0:
+
                     x = Attack(self.gamer1.grid, self.missile_coordinate).result_attack()
                     self.show_ennemy_grid(x, x_show)
                     x_show = []
+
                     self.check_win(self.gamer2.name)
                     if self.succes == True:
                         break
 
                 else:
+                    if count > 0:
+                        self.show_your_own_grid(self.gamer1.name,x)
                     y = Attack(self.gamer2.grid, self.missile_coordinate).result_attack()
                     self.show_ennemy_grid(y, y_show)
                     y_show = []
+
                     self.check_win(self.gamer1.name)
                     if self.succes == True:
                         break
 
                 self.missile_coordinate = []
+            count = count + 1
