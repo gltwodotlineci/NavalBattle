@@ -1,3 +1,4 @@
+from string import ascii_uppercase as letters
 
 class Game:
 
@@ -9,9 +10,17 @@ class Game:
         dimention = input(" Welcome "+name+", you're the first player, the first player have the right to chose the dimention of the game \n what's the dimention of the game that you want to play? \n press 1 if you want a 8 x 8 dimention game \n press 2 if you want a  16 x 16 game\n press 3 if you want a  26 x 26 game\n ")
         choice = int(dimention)
 
-        while choice > 3:
+        if choice == 1 or choice == 2 or choice == 3:
+            correct = True
+        else:
+            correct = False
+
+        while correct == False:
             input2 = input(" Wrong choice. you can only press 1, 2 or 3. \n press 1 if you want a 8 x 8 dimention game \n press 2 if you want a  16 x 16 game \n press 3 if you want a  26 x 26 game\n ")
             choice = int(input2)
+            if choice == 1 or choice == 2 or choice == 3:
+                correct = True
+
 
         print("Now the second player can write his hame and if he accept the dimention of the game proposed from the player")
         print('___________________________')
@@ -30,5 +39,20 @@ class Game:
             case 3:
                 return 26
 
+
     def name_players():
         return [name, name2]
+
+
+    def show_game_board(dim):
+        print(" ")
+        print(" Hi this will be the Ship Batle game board!")
+        print(" ")
+        show_grid = [['(:)'] * dim for i in range(dim)]
+        a_f = list(letters[:dim])
+        num = iter(range(1,(dim+1)))
+        print("     " + "   ".join(a_f))
+        for row in show_grid:
+            print(" ", next(num), end = " ")
+            print(" ".join(row))
+        print(" ")

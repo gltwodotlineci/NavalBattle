@@ -71,4 +71,3 @@ class Fighting:
                         break
 
                 self.missile_coordinate = []
-
