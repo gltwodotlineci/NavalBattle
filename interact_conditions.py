@@ -18,5 +18,11 @@ class InteractConditions:
             return coordinate_choice
 
 
-    def ship_conditions():
-        pass
+    def ship_conditions(x1,y1,x2,y2):
+        if x1 != x2:
+             while y1 != y2:
+                print("Erreur, it is possible that your coordinate must be "+str(y1))
+                y2 = int(input("Give the second coorinate of your ship: "))
+        else:
+            y2 = y2
+        return y2

@@ -1,3 +1,4 @@
+from interact_conditions import InteractConditions
 from ship import Ship
 from grid import Grid
 from game import Game
@@ -25,13 +26,16 @@ def create_ships():
         print("Hi "+player.name+" you can start creating your three ships")
         print("_____________________")
         for n in range(1,2):
-            for i in range(0,2):
-                if i == 0:
-                    ship_start.append(int(input("Choose the 1st coordinate for the start of ship "+str(n)+" ")))
-                    ship_start.append(int(input("Choose the second coordinate for the start of ship "+str(n)+" ")))
-                elif i == 1:
-                    ship_end.append(int(input("Choose the 1st coordinate for the end of ship "+str(n)+" ")))
-                    ship_end.append(int(input("Choose the second coordinate for the end of ship "+str(n)+" ")))
+            #for i in range(0,2):
+            begining_ship_x = int(input("Choose the 1st coordinate for the start of ship "+str(n)+" "))
+            begining_ship_y = int(input("Choose the second coordinate for the start of ship "+str(n)+" "))
+            end_ship_x = int(input("Choose the 1st coordinate for the end of ship "+str(n)+" "))
+            end_ship_y = int(input("Choose the second coordinate for the end of ship "+str(n)+" "))
+            #end_ship_y = InteractConditions.ship_conditions(begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
+            ship_start.append(begining_ship_x)
+            ship_start.append(begining_ship_y)
+            ship_end.append(end_ship_x)
+            ship_end.append(end_ship_y)
 
             Ship(player.grid, ship_start[0:2], ship_end[0:2]).creat_ship()
             ship_start, ship_end = [], []
