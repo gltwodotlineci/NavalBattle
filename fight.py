@@ -81,10 +81,9 @@ class Fighting:
                     else:
                         self.show_your_own_grid(self.gamer1.name,x)
                 for j in range(1,3):
-                    ele = InteractConditions.missile_conditions(hit.name, self.dimention, j)
+                    ele = InteractConditions.coordinate_conditions(hit.name, self.dimention, j, "of your missile attack:")
                     self.missile_coordinate.append(ele)
                 if index == 0:
-
                     x = Attack(self.gamer1.grid, self.missile_coordinate).result_attack()
                     self.show_ennemy_grid(x, x_show)
                     x_show = []
