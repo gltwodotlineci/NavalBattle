@@ -32,6 +32,7 @@ def create_ships():
                     begining_ship_y = InteractConditions(player.name, n).coordinate_conditions(dimention_game, "of the begingin of yur ship "+str(n)+": ")
                 else:
                     end_ship_x =  InteractConditions(player.name, n).coordinate_conditions(dimention_game, "of the end of yur ship "+str(n)+": ")
+                    end_ship_x = InteractConditions(player.name, n).verticla_length(begining_ship_x, end_ship_x)
                     end_ship_y = InteractConditions(player.name, n).coordinate_conditions(dimention_game,  "of the end of yur ship "+str(n)+": ")
                     end_ship_y = InteractConditions(player.name, n).ship_conditions(begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
             ship_start.append(begining_ship_x)

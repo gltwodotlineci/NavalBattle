@@ -48,19 +48,20 @@ class InteractConditions:
         return y2
 
 
-    def verticla_width(self,x1,x2):
+    def verticla_length(self,x1,x2):
         if x2 == x1:
             return x2
         else:
             if self.integer == 1:
                 while x2 != x1 + 2:
-                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+2)+ ". Because he width of Ship "+str(self.integer)+" must be three units ")
-                    x1 = int(input("Give the first coorinate of the begining of your ship: "))
+                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+2)+ ". Because the vertical length of Ship "+str(self.integer)+" must be three units ")
+                    x2 = int(input("Give the first coorinate of the end of your ship: "))
             elif self.integer == 2:
-                while x2 != x1 + 2:
-                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+2)+ ". Because he width of Ship "+str(self.integer)+" must be three units ")
-                    x1 = int(input("Give the first coorinate of the begining of your ship: "))
+                while x2 != x1 + 4:
+                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+4)+ ". Because the vertical length of Ship "+str(self.integer)+" must be five units ")
+                    x2 = int(input("Give the first coorinate of the end of your ship: "))
             elif self.integer == 3:
-                while x2 != x1 + 2:
-                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+2)+ ". Because he width of Ship "+str(self.integer)+" must be three units ")
-                    x1 = int(input("Give the first coorinate of the begining of your ship: "))
+                while x2 != x1 + 6:
+                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+6)+ ". Because the vertical length of Ship "+str(self.integer)+" must be sseven units ")
+                    x2 = int(input("Give the first coorinate of the end of your ship: "))
+            return x2
