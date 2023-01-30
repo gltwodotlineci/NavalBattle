@@ -34,17 +34,16 @@ class InteractConditions:
                 self.add_value = 6
                 return self.ship_width(x1,y1,x2,y2)
 
+
     def ship_width(self, x1, y1, x2, y2):
         if x1 != x2:
             while y1 != y2:
                 print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be "+str(y1))
                 y2 = int(input("Give the second coorinate of your ship: "))
         else:
-            if y2 != y1+ self.add_value:
+            while y2 != y1+ self.add_value:
                 print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(y1+self.add_value)+ ". Because he width of Ship "+str(self.integer)+" must be "+str(self.add_value+1)+" units ")
                 y2 = int(input("Give the second coorinate of the end of your ship: "))
-            else:
-                y2 = y2
         return y2
 
 
