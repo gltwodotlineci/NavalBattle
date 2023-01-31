@@ -1,4 +1,5 @@
 from interact_conditions import InteractConditions
+from game import Game
 
 class Ship:
     def __init__(self, player1, player2, dimention_game):
@@ -25,7 +26,7 @@ class Ship:
             print("_____________________")
             print("Hi "+player.name+" you can start creating your three ships")
             print("_____________________")
-            for n in range(1,4):
+            for n in range(1,3):
                 for i in range(0,2):
                     if i == 0:
                         begining_ship_x =  InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, "of the begining of yur ship "+str(n)+": ")
@@ -42,3 +43,6 @@ class Ship:
 
                 self.creat_ship(player.grid)
                 self.ship_start, self.ship_end = [], []
+
+            if n > 1:
+                Game.player_game_board(player.name, player.grid, self.dimention_game)

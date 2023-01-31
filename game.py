@@ -59,3 +59,14 @@ class Game:
             print(" ", next(num), end = " ")
             print(" ".join(row))
         print(" ")
+
+    def player_game_board(name_player, grid, dim):
+        print(" ")
+        print(name_player+" this is your origin game board")
+        a_f = list(letters[:dim])
+        num = iter(range(1,(dim+1)))
+        print("     " + "   ".join(a_f))
+        for row in grid:
+            print(" ", next(num), end = " ")
+            print(" ".join(row))
+        print(" ")
