@@ -5,15 +5,18 @@ class InteractConditions:
         self.integer = integer
         self.add_value = 0
 
+
     def coordinate_conditions(self, dimention, phrase):
-        coordinate_choice = int(input(self.name_player+" Choose the coordinate "+str(self.integer)+" "+phrase+" "))# of your missile attack: 
+        coordinate_choice_0 = (input(self.name_player+" Choose the coordinate "+str(self.integer)+" "+phrase+" "))# of your missile attack: 
+        coordinate_choice = self.convert_char(coordinate_choice_0)
         if -1 < coordinate_choice and coordinate_choice < dimention:
             correct_coordinate = True
             return coordinate_choice
         else:
             correct_coordinate = False
             while correct_coordinate == False:
-                coordinate_choice = int(input("Carefull the ccordinate must be between 0 and "+str(dimention-1)+" choose the coordinate " +str(self.integer)+" "+phrase+" "))#  of your missile attack: 
+                coordinate_choice_0 = (input("Carefull the ccordinate must be between A and "+chr(dimention+64)+" choose the coordinate " +str(self.integer)+" "+phrase+" "))#  of your missile attack: 
+                coordinate_choice = self.convert_char(coordinate_choice_0)
                 if coordinate_choice >= 0 and coordinate_choice < dimention:
                     correct_coordinate = True
                 else:
@@ -38,12 +41,14 @@ class InteractConditions:
     def ship_width(self, x1, y1, x2, y2):
         if x1 != x2:
             while y1 != y2:
-                print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be "+str(y1))
-                y2 = int(input("Give the second coorinate of your ship: "))
+                print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be "+(chr(y1+65)))
+                y2_0= (input("Give the second coorinate of your ship: "))
+                y2 = self.convert_char(y2_0)
         else:
             while y2 != y1+ self.add_value:
-                print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(y1+self.add_value)+ ". Because he width of Ship "+str(self.integer)+" must be "+str(self.add_value+1)+" units ")
-                y2 = int(input("Give the second coorinate of the end of your ship: "))
+                print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +chr(y1+self.add_value+65)+ ". Because he width of Ship "+str(self.integer)+" must be "+str(self.add_value+1)+" units ")
+                y2_0 = (input("Give the second coorinate of the end of your ship: "))
+                y2 = self.convert_char(y2_0)
         return y2
 
 
@@ -53,14 +58,21 @@ class InteractConditions:
         else:
             if self.integer == 1:
                 while x2 != x1 + 2:
-                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+2)+ ". Because the vertical length of Ship "+str(self.integer)+" must be three units ")
-                    x2 = int(input("Give the first coorinate of the end of your ship: "))
+                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +chr(x1+2+65)+ ". Because the vertical length of Ship "+str(self.integer)+" must be three units ")
+                    x2_0 = (input("Give the first coorinate of the end of your ship: "))
+                    x2 = self.convert_char(x2_0)
             elif self.integer == 2:
                 while x2 != x1 + 4:
-                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+4)+ ". Because the vertical length of Ship "+str(self.integer)+" must be five units ")
-                    x2 = int(input("Give the first coorinate of the end of your ship: "))
+                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +chr(x1+4+65)+ ". Because the vertical length of Ship "+str(self.integer)+" must be five units ")
+                    x2_0 = (input("Give the first coorinate of the end of your ship: "))
+                    x2 = self.convert_char(x2_0)
             elif self.integer == 3:
                 while x2 != x1 + 6:
-                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +str(x1+6)+ ". Because the vertical length of Ship "+str(self.integer)+" must be sseven units ")
-                    x2 = int(input("Give the first coorinate of the end of your ship: "))
+                    print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be " +chr(x1+6+65)+ ". Because the vertical length of Ship "+str(self.integer)+" must be sseven units ")
+                    x2_0 = (input("Give the first coorinate of the end of your ship: "))
+                    x2 = self.convert_char(x2_0)
             return x2
+
+
+    def convert_char(self, char):
+        return ord(char) - 65

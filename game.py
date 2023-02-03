@@ -55,9 +55,11 @@ class Game:
         a_f = list(letters[:dim])
         num = iter(range(1,(dim+1)))
         print("     " + "   ".join(a_f))
+        index = 0
         for row in show_grid:
-            print(" ", next(num), end = " ")
+            print(" ", (a_f[index]), end = " ")
             print(" ".join(row))
+            index = index+1
         print(" ")
 
     def player_game_board(name_player, grid, dim):
@@ -66,7 +68,9 @@ class Game:
         a_f = list(letters[:dim])
         num = iter(range(1,(dim+1)))
         print("     " + "   ".join(a_f))
+        index = 0
         for row in grid:
-            print(" ", next(num), end = " ")
+            print(" ", (a_f[index]), end = " ")
             print(" ".join(row))
+            index = index + 1
         print(" ")

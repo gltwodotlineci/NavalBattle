@@ -20,10 +20,11 @@ class Fighting:
         num = iter(range(1,(self.dimention+1)))
         print("Your ennemy gamefield!")
         print("     " + "   ".join(a_f))
+        index = 0
         for row in mat:
-            print(" ", next(num), end = " ")
+            print(" ", (a_f[index]), end = " ")
             print(" ".join(row))
-
+            index = index+1
 
     def show_ennemy_grid(self, var1, var2):
         count = 0
@@ -50,9 +51,11 @@ class Fighting:
             num = iter(range(1,(self.dimention+1)))
             print( " YOUR OWN GAMEFIELD")
             print("     " + "   ".join(a_f))
+            index = 0
             for row in grid:
-                print(" ", next(num), end = " ")
+                print(" ", (a_f[index]), end = " ")
                 print(" ".join(row))
+                index = index + 1
             print("    ")
         else:
             pass
