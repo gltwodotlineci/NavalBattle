@@ -1,3 +1,4 @@
+import os
 from attack import Attack
 from string import ascii_uppercase as letters
 from interact_conditions import InteractConditions
@@ -92,6 +93,10 @@ class Fighting:
                     x_show = []
 
                     self.check_win(self.gamer2.name)
+                    clear_screen = input(" Press 'h' to hide your game and to continu ")
+                    while clear_screen != 'h':
+                        clear_screen = input(" Press 'h' to hide your game and to continu ")
+                    os.system('clear')
                     if self.succes == True:
                         break
 
@@ -101,6 +106,10 @@ class Fighting:
                     y_show = []
 
                     self.check_win(self.gamer1.name)
+                    clear_screen = input(" Press 'h' to hide your game and to continu ")
+                    while clear_screen != 'h':
+                        clear_screen = input(" Press 'h' to hide your game and to continu ")
+                    os.system('clear')
                     if self.succes == True:
                         break
 
