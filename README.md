@@ -19,14 +19,15 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
   E  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
   F  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
   G  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
-  H  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  H  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)
 
   * 8x8 dimesion game *
 
-*** the symbols are: (:) for empty space ***
-                    [o] the simbol of a part of the ship.
-                    [#] when the missile has hit the target.
-                    -No when the missile has missed the target.
+_*the symbols are: (:) for empty space*_.
+
+                    [o] the simbol of a part of the ship.\
+                    [#] when the missile has hit the target.\
+                    -No when the missile has missed the target.\
 
 ### Here is a game situation.
 
@@ -40,7 +41,7 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
   G  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
   H  [o]  [o]  [o]  [o]  [o]  [o]  [o]  (:)
 
-* In this game the ship is hited once in the coordinate (A:C) and missed once in the coordinate (C:D) *
+*In this game the ship is hited once in the coordinate (A:C) and missed once in the coordinate (C:D)*_
 
 At this moment the choice for the ships is that we'll have 3 ships. The first one will be three units, the second one 5 and the third 7.
 
