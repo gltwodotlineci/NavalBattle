@@ -49,4 +49,4 @@ At this moment the choice for the ships is that we'll have 3 ships. The first on
 
 In this game you can't start placing the ship in a decreasing way (Vertically or horizontally) for example, the ship between (A:A) and (A:C). When you give the coordinates to place the ship in this way you can't give the coordinates (A:C) for the beginning of the ship and (A:A) for the end of the ship. You must give the (A:A) for the beginning and (A:C) for the end. the same for the ship between (A:H) to (E:H), you can't start in (E:H) and end in (A:H).
 
-###* Some advantages of the game are that, the game will not let you lance a missile outside the game field and also it will not permit you to build a ship bigger or smaller of the appropriated ship.
+### Some advantages of the game are that, the game will not let you lance a missile outside the game field and also it will not permit you to build a ship bigger or smaller of the appropriated ship.
