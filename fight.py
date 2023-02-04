@@ -2,6 +2,7 @@ import os
 from attack import Attack
 from string import ascii_uppercase as letters
 from interact_conditions import InteractConditions
+from game import Game
 
 
 class Fighting:
@@ -84,6 +85,7 @@ class Fighting:
                         self.show_your_own_grid(self.gamer2.name,y)
                     else:
                         self.show_your_own_grid(self.gamer1.name,x)
+                Game.show_game_board(self.dimention)
                 for j in range(1,3):
                     ele = InteractConditions(hit.name, j).coordinate_conditions(self.dimention, "of your missile attack:")
                     self.missile_coordinate.append(ele)
