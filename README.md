@@ -13,12 +13,19 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
 
      A   B   C   D   E   F   G   H
   A (:) (:) (:) (:) (:) (:) (:) (:)
+
   B (:) (:) (:) (:) (:) (:) (:) (:)
+
   C (:) (:) (:) (:) (:) (:) (:) (:)
+
   D (:) (:) (:) (:) (:) (:) (:) (:)
+
   E (:) (:) (:) (:) (:) (:) (:) (:)
+
   F (:) (:) (:) (:) (:) (:) (:) (:)
+
   G (:) (:) (:) (:) (:) (:) (:) (:)
+
   H (:) (:) (:) (:) (:) (:) (:) (:)
 
   *8x8 dimesion game
@@ -31,13 +38,13 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
 ### Here is a game situation.
 
      A   B   C   D   E   F   G   H
-  A [o] [o] [#] (:) (:) (:) (:) [o]
-  B (:) (:) (:) (:) (:) (:) (:) [o]
-  C (:) (:) (:) -No (:) (:) (:) [o]
-  D (:) (:) (:) (:) (:) (:) (:) [o]
-  E (:) (:) (:) (:) (:) (:) (:) [o]
-  F (:) (:) (:) (:) (:) (:) (:) (:)
-  G (:) (:) (:) (:) (:) (:) (:) (:)
+  A [o] [o] [#] (:) (:) (:) (:) [o]\
+  B (:) (:) (:) (:) (:) (:) (:) [o]\
+  C (:) (:) (:) -No (:) (:) (:) [o]\
+  D (:) (:) (:) (:) (:) (:) (:) [o]\
+  E (:) (:) (:) (:) (:) (:) (:) [o]\
+  F (:) (:) (:) (:) (:) (:) (:) (:)\
+  G (:) (:) (:) (:) (:) (:) (:) (:)\
   H [o] [o] [o] [o] [o] [o] [o] (:)
 
 *In this game the ship is hited once in the coordinate (A:C) and missed once in the coordinate (C:D)
