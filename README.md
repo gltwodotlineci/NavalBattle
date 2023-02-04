@@ -12,25 +12,18 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
 ### Here is a empty board game example:
 
      A   B   C   D   E   F   G   H
-  A (:) (:) (:) (:) (:) (:) (:) (:)
+  A  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  B  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  C  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  D  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  E  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  F  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  G  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  H  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
 
-  B (:) (:) (:) (:) (:) (:) (:) (:)
+  * 8x8 dimesion game *
 
-  C (:) (:) (:) (:) (:) (:) (:) (:)
-
-  D (:) (:) (:) (:) (:) (:) (:) (:)
-
-  E (:) (:) (:) (:) (:) (:) (:) (:)
-
-  F (:) (:) (:) (:) (:) (:) (:) (:)
-
-  G (:) (:) (:) (:) (:) (:) (:) (:)
-
-  H (:) (:) (:) (:) (:) (:) (:) (:)
-
-  *8x8 dimesion game
-
-***the symbols are: (:) for empty space
+*** the symbols are: (:) for empty space ***
                     [o] the simbol of a part of the ship.
                     [#] when the missile has hit the target.
                     -No when the missile has missed the target.
@@ -38,16 +31,16 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
 ### Here is a game situation.
 
      A   B   C   D   E   F   G   H
-  A [o] [o] [#] (:) (:) (:) (:) [o]\
-  B (:) (:) (:) (:) (:) (:) (:) [o]\
-  C (:) (:) (:) -No (:) (:) (:) [o]\
-  D (:) (:) (:) (:) (:) (:) (:) [o]\
-  E (:) (:) (:) (:) (:) (:) (:) [o]\
-  F (:) (:) (:) (:) (:) (:) (:) (:)\
-  G (:) (:) (:) (:) (:) (:) (:) (:)\
-  H [o] [o] [o] [o] [o] [o] [o] (:)
+  A  [o]  [o]  [#]  (:)  (:)  (:)  (:)  [o]\
+  B  (:)  (:)  (:)  (:)  (:)  (:)  (:)  [o]\
+  C  (:)  (:)  (:)  -No  (:)  (:)  (:)  [o]\
+  D  (:)  (:)  (:)  (:)  (:)  (:)  (:)  [o]\
+  E  (:)  (:)  (:)  (:)  (:)  (:)  (:)  [o]\
+  F  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  G  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  H  [o]  [o]  [o]  [o]  [o]  [o]  [o]  (:)
 
-*In this game the ship is hited once in the coordinate (A:C) and missed once in the coordinate (C:D)
+* In this game the ship is hited once in the coordinate (A:C) and missed once in the coordinate (C:D) *
 
 At this moment the choice for the ships is that we'll have 3 ships. The first one will be three units, the second one 5 and the third 7.
 
