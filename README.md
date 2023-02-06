@@ -26,7 +26,7 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
 _**the symbols are: (:) for empty space**_.
 
         <span style="color:green">[o]</span> the simbol of a part of the ship.
-        <span style="color:red">[#]</span> when the missile has hit the target.
+        <font color='red'>[#]</font> when the missile has hit the target.
         -No when the missile has missed the target.
 
 ### Here is a game situation.
