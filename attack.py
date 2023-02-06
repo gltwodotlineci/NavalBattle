@@ -6,9 +6,9 @@ class Attack:
         self.coordinates = coordinates
 
     def result_attack(self):
-        if self.grid[self.coordinates[0]][self.coordinates[1]] == "(:)" or self.grid[self.coordinates[0]][self.coordinates[1]] == "-No":
+        if self.grid[self.coordinates[0]][self.coordinates[1]] == '\x1b[34m(:)\x1b[0m' or self.grid[self.coordinates[0]][self.coordinates[1]] == "-No":
             self.grid[self.coordinates[0]][self.coordinates[1]] = "-No"
         else:
-            self.grid[self.coordinates[0]][self.coordinates[1]] = "[#]"
+            self.grid[self.coordinates[0]][self.coordinates[1]] = '\x1b[31m[#]\x1b[0m'
 
         return self.grid

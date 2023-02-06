@@ -3,4 +3,4 @@ class Grid:
         self.width = width
 
     def create_grid(self):
-        return [['(:)'] * self.width for i in range(self.width)]
+        return [['\x1b[34m(:)\x1b[0m'] * self.width for i in range(self.width)]

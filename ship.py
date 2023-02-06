@@ -13,10 +13,10 @@ class Ship:
     def creat_ship(self, grid):
         if self.ship_start[0] == self.ship_end[0]:
             for j in range(self.ship_start[1],(self.ship_end[1]+1)):
-                grid[self.ship_start[0]][j] = "[o]"
+                grid[self.ship_start[0]][j] = "\033[1;32;40m[O]"
         elif self.ship_start[1] == self.ship_end[1]:
             for k in range((self.ship_start[0]),self.ship_end[0]+1):
-                grid[k][self.ship_end[1]] = "[o]"
+                grid[k][self.ship_end[1]] = "\033[1;32;40m[O]"
         print("____________________________________")
         return grid
 

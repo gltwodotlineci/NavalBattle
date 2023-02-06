@@ -31,10 +31,10 @@ class Fighting:
         count = 0
         for r in var1:
             for cel in r:
-                if cel != "[o]":
+                if cel != "\033[1;32;40m[O]":
                     var2.append(cel)
-                elif cel == "[o]":
-                    var2.append("(:)")
+                elif cel == "\033[1;32;40m[O]":
+                    var2.append('\x1b[34m(:)\x1b[0m')
                     count = count + 1 # Will be used to check win
 
         if count == 0:

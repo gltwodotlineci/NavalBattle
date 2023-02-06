@@ -51,7 +51,7 @@ class Game:
         print(" ")
         print(" Hi this will be the Ship Batle game board!")
         print(" ")
-        show_grid = [['(:)'] * dim for i in range(dim)]
+        show_grid = [['\x1b[34m(:)\x1b[0m'] * dim for i in range(dim)]
         a_f = list(letters[:dim])
         print("     " + "   ".join(a_f))
         index = 0
