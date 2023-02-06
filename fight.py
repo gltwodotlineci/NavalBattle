@@ -19,7 +19,6 @@ class Fighting:
             mat.append(new_grid[:self.dimention])
             new_grid = new_grid[self.dimention:]
         a_f = list(letters[:self.dimention])
-        num = iter(range(1,(self.dimention+1)))
         print("Your ennemy gamefield!")
         print("     " + "   ".join(a_f))
         index = 0
@@ -50,7 +49,6 @@ class Fighting:
         answer = input("yes/no ")
         if answer == "yes":
             a_f = list(letters[:self.dimention])
-            num = iter(range(1,(self.dimention+1)))
             print( " YOUR OWN GAMEFIELD")
             print("     " + "   ".join(a_f))
             index = 0

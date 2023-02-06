@@ -53,7 +53,6 @@ class Game:
         print(" ")
         show_grid = [['(:)'] * dim for i in range(dim)]
         a_f = list(letters[:dim])
-        num = iter(range(1,(dim+1)))
         print("     " + "   ".join(a_f))
         index = 0
         for row in show_grid:
@@ -66,7 +65,6 @@ class Game:
         print(" ")
         print(name_player+" this is your origin game board")
         a_f = list(letters[:dim])
-        num = iter(range(1,(dim+1)))
         print("     " + "   ".join(a_f))
         index = 0
         for row in grid:
