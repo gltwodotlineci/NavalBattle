@@ -12,7 +12,7 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
 ### Here is a empty board game example:
 
      A   B   C   D   E   F   G   H
-  A  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
+  A  <span style="color:blue">(:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)</span>\
   B  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
   C  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
   D  (:)  (:)  (:)  (:)  (:)  (:)  (:)  (:)\
@@ -25,8 +25,8 @@ The coordinates for the ship or the missile will be alphabetically. A to H for 8
 
 _**the symbols are: (:) for empty space**_.
 
-        [o] the simbol of a part of the ship.
-        [#] when the missile has hit the target.
+        <span style="color:green">[o]</span> the simbol of a part of the ship.
+        <span style="color:red">[#]</span> when the missile has hit the target.
         -No when the missile has missed the target.
 
 ### Here is a game situation.
