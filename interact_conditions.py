@@ -6,8 +6,12 @@ class InteractConditions:
         self.add_value = 0
 
 
-    def coordinate_conditions(self, dimention, phrase):
-        coordinate_choice_0 = (input(self.name_player+" Choose the coordinate "+str(self.integer)+" "+phrase+" "))# of your missile attack: 
+    def coordinate_conditions(self, dimention, coord_nb,phrase):
+        '''
+        The method make sure that the given coordinates of a ship or of
+        a missile will not be outside the game border
+        '''
+        coordinate_choice_0 = (input(self.name_player+" Choose the coordinate "+str(coord_nb)+" "+phrase+" "))
         coordinate_choice = self.convert_char(coordinate_choice_0)
         if -1 < coordinate_choice and coordinate_choice < dimention:
             correct_coordinate = True
@@ -39,6 +43,13 @@ class InteractConditions:
 
 
     def ship_width(self, x1, y1, x2, y2):
+        '''
+        The mathod will garentie that the ship will not be biger or smaller
+        than the game conditions.
+        Example, if the first ship must be 3 units large and the player will
+        make a ship of 2 or 4 units large, the method will stop it and sugest
+        to the player the right size
+        '''
         if x1 != x2:
             while y1 != y2:
                 print("Erreur! Attention "+self.name_player+ " it is possible that your coordinate might be "+(chr(y1+65)))
@@ -53,6 +64,10 @@ class InteractConditions:
 
 
     def verticla_length(self,x1,x2):
+        '''
+        The same thing like in the 'ship_width' method, but thise time for
+        the vertical case
+        '''
         if x2 == x1:
             return x2
         else:
