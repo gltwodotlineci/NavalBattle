@@ -5,10 +5,9 @@ from game import Game
 from player import Player
 from fight import Fighting
 
-if Game.start_game() == False:
+while Game.start_game() == False:
     Game.start_game()
-else:
-    pass
+
 
 dimention_game = Game.choosing()
 Game.show_game_board(dimention_game)

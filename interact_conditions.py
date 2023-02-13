@@ -30,16 +30,13 @@ class InteractConditions:
 
 
     def ship_conditions(self, x1, y1, x2, y2):
-        match self.integer:    
-            case 1:
-                self.add_value = 2
-                return self.ship_width(x1,y1,x2,y2)
-            case 2:
-                self.add_value = 4
-                return self.ship_width(x1,y1,x2,y2)
-            case 3:
-                self.add_value = 6
-                return self.ship_width(x1,y1,x2,y2)
+        self.add_value = 6
+        if self.integer == 1:
+            self.add_value = 2
+        elif self.integer == 2:
+            self.add_value == 4
+        return self.ship_width(x1,y1,x2,y2)
+
 
 
     def ship_width(self, x1, y1, x2, y2):

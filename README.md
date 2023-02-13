@@ -1,5 +1,7 @@
 # The Battleship game (Naval Batle)
 
+##### The game will be alsow published in 'https://github.com/GlenDrs'
+
 Battleship is game played between two players. Originaly a french game named otherwise Bataille Navale.
 the previews adresse will tell you more about the rules of the game: https://www.cs.nmsu.edu/~bdu/TA/487/brules.htm
 

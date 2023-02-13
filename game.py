@@ -10,26 +10,18 @@ class Game:
         dimention = input(" Welcome "+name+", you're the first player, the first player have the right to chose the dimention of the game \n what's the dimention of the game that you want to play? \n press 1 if you want a 8 x 8 dimention game \n press 2 if you want a  16 x 16 game\n press 3 if you want a  26 x 26 game\n ")
         choice = int(dimention)
 
-        if choice == 1 or choice == 2 or choice == 3:
-            correct = True
-        else:
-            correct = False
-
-        while correct == False:
+        while choice != 1 and choice != 2 and choice != 3:
             input2 = input(" Wrong choice. you can only press 1, 2 or 3. \n press 1 if you want a 8 x 8 dimention game \n press 2 if you want a  16 x 16 game \n press 3 if you want a  26 x 26 game\n ")
             choice = int(input2)
-            if choice == 1 or choice == 2 or choice == 3:
-                correct = True
 
-
-        print("Now the second player can write his hame and if he accept the dimention of the game proposed from the player")
-        print('___________________________')
+        print("The second player turn now.")
+        print(' ')
         name2 = input("Hello the player 2, what's your name? ")
         accept_dim = input("Welcome "+name2+", if you accept the dimention type 'Yes' ")
         if accept_dim != "Yes":
             print(" ")
-            print("OK, You can start over from the begining than")
-            print(" ___________________________")
+            print("You didn't accept the game dimentios. Let's start over again than")
+            print(" ")
             return False
 
 
@@ -39,8 +31,7 @@ class Game:
                 return 8
             case 2:
                 return 16
-            case 3:
-                return 26
+        return 26
 
 
     def name_players():
@@ -54,11 +45,9 @@ class Game:
         show_grid = [['\x1b[34m(:)\x1b[0m'] * dim for i in range(dim)]
         a_f = list(letters[:dim])
         print("     " + "   ".join(a_f))
-        index = 0
-        for row in show_grid:
+        for index, row in enumerate(show_grid):
             print(" ", (a_f[index]), end = " ")
             print(" ".join(row))
-            index = index+1
         print(" ")
 
     def player_game_board(name_player, grid, dim):
@@ -66,9 +55,7 @@ class Game:
         print(name_player+" this is your origin game board")
         a_f = list(letters[:dim])
         print("     " + "   ".join(a_f))
-        index = 0
-        for row in grid:
+        for index, row in enumerate(grid):
             print(" ", (a_f[index]), end = " ")
             print(" ".join(row))
-            index = index + 1
         print(" ")
