@@ -6,25 +6,16 @@ class InteractConditions:
         self.add_value = 0
 
 
-    def coordinate_conditions(self, dimention, coord_nb,phrase):
+    def coordinate_conditions(self, dimention, coord_nb, phrase):
         '''
         The method make sure that the given coordinates of a ship or of
         a missile will not be outside the game border
         '''
         coordinate_choice = ord(input(self.name_player+" Choose the coordinate "+str(coord_nb)+" "+phrase+" ")) - 65
-        if -1 < coordinate_choice and coordinate_choice < dimention:
-            correct_coordinate = True
-            return coordinate_choice
-        else:
-            correct_coordinate = False
-            while correct_coordinate == False:
-                coordinate_choice = ord(input("Carefull the ccordinate must be between A and "+chr(dimention+64)+" choose the coordinate " +str(self.integer)+" "+phrase+" ")) - 65
-                if coordinate_choice >= 0 and coordinate_choice < dimention:
-                    correct_coordinate = True
-                else:
-                    correct_coordinate = False
 
-            return coordinate_choice
+        while coordinate_choice > dimention or coordinate_choice < -1:
+            coordinate_choice = ord(input("Carefull the ccordinate must be between A and "+chr(dimention+64)+" choose the coordinate " +str(self.integer)+" "+phrase+" ")) - 65
+        return coordinate_choice
 
 
     def ship_conditions(self, x1, y1, x2, y2):
