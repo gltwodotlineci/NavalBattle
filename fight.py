@@ -70,7 +70,7 @@ class Fighting:
 
 
     def attack_organise(self, count, name, gamer_grid):
-        xy_show = []
+        xy_show, xy = [], []
         if count > 0:
             self.show_your_own_grid(name, xy)
         Game.show_game_board(self.dimention)
@@ -89,55 +89,35 @@ class Fighting:
         if self.succes == True:
             while 1:
                 break
-
-
+   
+    
     def player_hit(self):
         count = 0
-        x_show, y_show = [], []
+        xy_show, xy = [[],[]], [[],[]]
         while self.succes != True:
             gamers = [self.gamer2, self.gamer1]
             for index, hit in enumerate(gamers):
-                '''
                 if count > 0:
-                    if index == 0:
-                        self.show_your_own_grid(self.gamer2.name,y)
-                    else:
-                        self.show_your_own_grid(self.gamer1.name,x)
-                Game.show_game_board(self.dimention)
-                '''
-                id = 1 -index
-                self.attack_organise(count, hit.name, gamers[1-index].grid )
-
-
-                '''
+                    self.show_your_own_grid(hit.name,xy[1 - index])
+                    self.show_ennemy_grid(xy[index], xy_show[index])
+                    xy_show[index] = []
+                else:
+                    Game.show_game_board(self.dimention)
                 for j in range(1,3):
                     ele = InteractConditions(hit.name, j).coordinate_conditions(self.dimention, j,"of your missile attack:")
                     self.missile_coordinate.append(ele)
-                if index == 0:
-                    x = Attack(self.gamer1.grid, self.missile_coordinate).result_attack()
-                    self.show_ennemy_grid(x, x_show)
-                    x_show = []
 
-                    self.check_win(self.gamer2.name)
+                xy[index] = Attack(hit.grid, self.missile_coordinate).result_attack()
+                self.show_ennemy_grid(xy[index], xy_show[index])
+                xy_show[index] = []
+
+                self.check_win(hit.name)
+                clear_screen = input(" Press 'h' to hide your game and to continu ")
+                while clear_screen != 'h':
                     clear_screen = input(" Press 'h' to hide your game and to continu ")
-                    while clear_screen != 'h':
-                        clear_screen = input(" Press 'h' to hide your game and to continu ")
-                    os.system('clear')
-                    if self.succes == True:
-                        break
+                os.system('clear')
+                if self.succes == True:
+                    break
 
-                else:
-                    y = Attack(self.gamer2.grid, self.missile_coordinate).result_attack()
-                    self.show_ennemy_grid(y, y_show)
-                    y_show = []
-
-                    self.check_win(self.gamer1.name)
-                    clear_screen = input(" Press 'h' to hide your game and to continu ")
-                    while clear_screen != 'h':
-                        clear_screen = input(" Press 'h' to hide your game and to continu ")
-                    os.system('clear')
-                    if self.succes == True:
-                        break
-                '''
                 self.missile_coordinate = []
             count = count + 1
