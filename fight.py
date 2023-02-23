@@ -69,26 +69,14 @@ class Fighting:
             print("*********************")
 
 
-    def attack_organise(self, count, name, gamer_grid):
-        xy_show, xy = [], []
-        if count > 0:
-            self.show_your_own_grid(name, xy)
-        Game.show_game_board(self.dimention)
-        for j in range(1,3):
-            ele = InteractConditions(name, j).coordinate_conditions(self.dimention, j,"of your missile attack:")
-            self.missile_coordinate.append(ele)
-        xy = Attack(gamer_grid, self.missile_coordinate).result_attack()
-        self.show_ennemy_grid(xy,xy_show)
-        xy_show = []
-
+    def adjust_screen(self, name):
         self.check_win(name)
         clear_screen = input(" Press 'h' to hide your game and to continu ")
         while clear_screen != 'h':
             clear_screen = input(" Press 'h' to hide your game and to continu ")
         os.system('clear')
-        if self.succes == True:
-            while 1:
-                break
+
+
    
     
     def player_hit(self):
@@ -111,13 +99,8 @@ class Fighting:
                 self.show_ennemy_grid(xy[index], xy_show[index])
                 xy_show[index] = []
 
-                self.check_win(hit.name)
-                clear_screen = input(" Press 'h' to hide your game and to continu ")
-                while clear_screen != 'h':
-                    clear_screen = input(" Press 'h' to hide your game and to continu ")
-                os.system('clear')
+                self.adjust_screen(hit.name)
                 if self.succes == True:
                     break
-
                 self.missile_coordinate = []
             count = count + 1
