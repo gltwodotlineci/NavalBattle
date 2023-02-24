@@ -77,8 +77,6 @@ class Fighting:
         os.system('clear')
 
 
-   
-    
     def player_hit(self):
         count = 0
         xy_show, xy = [[],[]], [[],[]]
