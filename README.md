@@ -2,6 +2,14 @@
 
 ##### The game will be alsow published in 'https://github.com/GlenDrs'
 
+## Starting game:
+```
+git clone https://github.com/gltwodotlineci/NavalBattle
+cd NavalBattle
+python3 main.py
+```
+** Sometimes instead of 'python3' write 'python'
+
 Battleship is game played between two players. Originaly a french game named otherwise Bataille Navale.
 the previews adresse will tell you more about the rules of the game: https://www.cs.nmsu.edu/~bdu/TA/487/brules.htm
 
