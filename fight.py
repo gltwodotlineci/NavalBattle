@@ -18,13 +18,10 @@ class Fighting:
         while new_grid != []:
             mat.append(new_grid[:self.dimention])
             new_grid = new_grid[self.dimention:]
-        a_f = list(letters[:self.dimention])
-        print("Your ennemy gamefield!")
-        print("     " + "   ".join(a_f))
+        a_f = list(letters[:self.dimention]); print("Your ennemy gamefield!"); print("     " + "   ".join(a_f))
         index = 0
         for row in mat:
-            print(" ", (a_f[index]), end = " ")
-            print(" ".join(row))
+            print(" ", (a_f[index]), end = " "); print(" ".join(row))
             index = index+1
 
     def show_ennemy_grid(self, var1, var2):
@@ -48,25 +45,19 @@ class Fighting:
         print(" write 'yes' if you want to see your game field and 'no' if not ")
         answer = input("yes/no ")
         if answer == "yes":
-            a_f = list(letters[:self.dimention])
-            print( " YOUR OWN GAMEFIELD")
+            a_f = list(letters[:self.dimention]); print( " YOUR OWN GAMEFIELD")
             print("     " + "   ".join(a_f))
             index = 0
             for row in grid:
                 print(" ", (a_f[index]), end = " ")
                 print(" ".join(row))
-                index = index + 1
-            print("    ")
+                index = index + 1; print("    ")
 
 
     def check_win(self, player):
         if self.succes == True:
-            print(" ")
-            print("*********************")
-            print(" ")
-            print("CONGRATS "+player+" YOU WON!!!")
-            print(" ")
-            print("*********************")
+            print(" "); print("*********************"); print(" ")
+            print("CONGRATS "+player+" YOU WON!!!"); print(" "); print("*********************")
 
 
     def adjust_screen(self, name):
@@ -78,8 +69,7 @@ class Fighting:
 
 
     def player_hit(self):
-        count = 0
-        xy_show, xy = [[],[]], [[],[]]
+        count, xy_show, xy = 0, [[],[]], [[],[]]
         while self.succes != True:
             gamers = [self.gamer2, self.gamer1]
             for index, hit in enumerate(gamers):

@@ -46,39 +46,31 @@ class Ship:
     def create_ships(self,):
 
         for player in [self.player1, self.player2]:
-            print("_____________________")
-            print("Hi "+player.name+" you can start creating your three ships")
-            print("_____________________");
-            for n in range(1,3):
+            print("_____________________"); print("Hi "+player.name+" you can start creating your three ships"); print("_____________________");
+            for n in range(1,4):
                 k = n -1
-                while k < n:    
-                    for i in range(0,2):
-                        if i == 0:
-                            begining_ship_x =  InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 1, "of the begining of yur ship "+str(n)+": ")
-                            begining_ship_y = InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 2, "of the begingin of yur ship "+str(n)+": ")
-                            ''''
-                            this method will check if the two coordinates of the beginging of the
-                            ship will not be in a position that the end of the ship will be outside
-                            the board game. If so it will sugest to the player to pick the coordinates from
-                            the begining.
-                            Example: A game dimention of 8x8, let's say that the player for the third
-                            ship of seven unit dimention give the position (3:7), the only two possibilities
-                            for the end of the ship will be (3:15) or (10:7), wich are otside
-                            the game dimention.
-                            '''
-                            while self.dimention_game < begining_ship_x +  n * 2 and self.dimention_game < begining_ship_y + n * 2:
-                                print("Attention the coordinates of the begingin of the ship might be in order that the end of the ship will not be outside the game gride")
-                                begining_ship_x =  InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 1,"of the begining of yur ship "+str(n)+": ")
-                                begining_ship_y = InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 2,"of the begingin of yur ship "+str(n)+": ")
-                        else:
-                            end_ship_x =  InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 1, "of the end of yur ship "+str(n)+": ")
-                            end_ship_x = InteractConditions(player.name, n).verticla_length(begining_ship_x, end_ship_x)
-                            end_ship_y = InteractConditions(player.name, n).coordinate_conditions(self.dimention_game,  2, "of the end of yur ship "+str(n)+": ")
-                            end_ship_y = InteractConditions(player.name, n).ship_conditions(begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
-                    self.ship_start.append(begining_ship_x)
-                    self.ship_start.append(begining_ship_y)
-                    self.ship_end.append(end_ship_x)
-                    self.ship_end.append(end_ship_y)
+                while k < n:
+                    begining_ship_x =  InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 1, "of the begining of yur ship "+str(n)+": ")
+                    begining_ship_y = InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 2, "of the begingin of yur ship "+str(n)+": ")
+                    ''''
+                    this method will check if thee coordinates of the end of the ship will be outside
+                    the board game because of the coordinates of the begining. If so it will sugest to the player
+                    to choose the again coordinates of the begining of the ship.
+                    Example: A game dimention of 8x8, let's say that the player for the third
+                    ship of seven unit dimention give the position (C:G), the only two possibilities
+                    for the end of the ship will be (C:O) or (J:G), wich are otside
+                    the game dimention.
+                    '''
+                    while self.dimention_game < begining_ship_x +  n * 2 and self.dimention_game < begining_ship_y + n * 2:
+                        print("Attention the coordinates of the begingin of the ship might be in order that the end of the ship will not be outside the game gride")
+                        begining_ship_x =  InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 1,"of the begining of yur ship "+str(n)+": ")
+                        begining_ship_y = InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 2,"of the begingin of yur ship "+str(n)+": ")
+
+                    end_ship_x =  InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 1, "of the end of yur ship "+str(n)+": ")
+                    end_ship_x = InteractConditions(player.name, n).verticla_length(begining_ship_x, end_ship_x)
+                    end_ship_y = InteractConditions(player.name, n).coordinate_conditions(self.dimention_game,  2, "of the end of yur ship "+str(n)+": ")
+                    end_ship_y = InteractConditions(player.name, n).ship_conditions(begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
+                    self.ship_start.append(begining_ship_x); self.ship_start.append(begining_ship_y); self.ship_end.append(end_ship_x); self.ship_end.append(end_ship_y)
 
                     if self.creat_ship(player.grid) == False:
                         k = n -1; self.ship_start, self.ship_end = [], []
