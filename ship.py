@@ -8,6 +8,12 @@ class Ship:
             self.player2 = player2
             self.dimention_game = dimention_game
             self.ship_start, self.ship_end  = [], []
+            self.coordinates_ships = {
+                'ship_number': [],
+                'horizontal_ship': [],
+                'starting_ship': [],
+                'ending_ship': []
+            }
 
 
     def creat_ship(self, grid):
@@ -15,14 +21,14 @@ class Ship:
             #building a horizontal ship
             if self.ship_start[0] == self.ship_end[0]:
                 for j in range(self.ship_start[1],(self.ship_end[1]+1)):
-                    # Avoiding ships to be placed on top of each other!
+                    # Avoiding the deployment of the ship on top of an existing ship!
                     if grid[self.ship_start[0]][j] == "\033[1;32;40m[O]":
                         raise ValueError
                     grid[self.ship_start[0]][j] = "\033[1;32;40m[O]"
             #building a vertical ship
             elif self.ship_start[1] == self.ship_end[1]:
                 for k in range((self.ship_start[0]),self.ship_end[0]+1):
-                    # Avoiding ships to be placed on top of each other!
+                    # Avoiding the deployment of the ship on top of an existing ship!
                     if grid[k][self.ship_end[1]] == "\033[1;32;40m[O]":
                         raise ValueError
                     grid[k][self.ship_end[1]] = "\033[1;32;40m[O]"
@@ -76,5 +82,15 @@ class Ship:
                         k = n -1; self.ship_start, self.ship_end = [], []
                         continue
                     k = n
+                    self.coordinates_ships['ship_number'].append(n)
+                    self.coordinates_ships['starting_ship'].append(begining_ship_x)
+                    self.coordinates_ships['starting_ship'].append(begining_ship_y)
+
+                    if begining_ship_x == end_ship_x:
+                        self.coordinates_ships['horizontal_ship'].append(1)
+                    self.coordinates_ships['horizontal_ship'].append(0)
+                    self.coordinates_ships['starting_ship'].append(end_ship_x)
+                    self.coordinates_ships['ending_ship'].append(end_ship_y)
+
                     self.ship_start, self.ship_end = [], []
             self.clear_screen(n, player.name, player.grid)

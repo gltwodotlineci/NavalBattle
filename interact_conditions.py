@@ -19,7 +19,6 @@ class InteractConditions:
 
 
     def ship_conditions(self, x1, y1, x2, y2):
-        #self.add_value = 2 * self.integer
         return self.ship_width(x1,y1,x2,y2)
 
 
