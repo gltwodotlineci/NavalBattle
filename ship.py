@@ -94,3 +94,7 @@ class Ship:
 
                     self.ship_start, self.ship_end = [], []
             self.clear_screen(n, player.name, player.grid)
+
+
+    def return_coordonates_ship(self):
+        return self.coordinates_ships
