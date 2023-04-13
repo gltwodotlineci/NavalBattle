@@ -1,5 +1,6 @@
 from interact_conditions import InteractConditions
 from game import Game
+from coordinates_ships import CoordinatesOfShips
 import os, time
 
 class Ship:
@@ -8,26 +9,7 @@ class Ship:
             self.player2 = player2
             self.dimention_game = dimention_game
             self.ship_start, self.ship_end  = [], []
-            self.coordinates_ships = {
-
-                'n':{
-                    'ship_number': None,
-                    'horizontal_ship': None,
-                    'start_x': None,
-                    'start_y': None,
-                    'end_x': None,
-                    'end_y': None,
-                }
-            }
-            '''
-            'ship_number': [],
-            'horizontal_ship': [],
-            'start_x': [],
-            'start_y': [],
-            'end_x': [],
-            'end_y': []
-            '''
-            
+           
 
     def creat_ship(self, grid):
         try:
@@ -68,7 +50,8 @@ class Ship:
         self.coordinates_ships['start_y'].append(start_ship_y)
         if start_ship_x == end_ship_x:
             self.coordinates_ships['horizontal_ship'].append(1)
-        self.coordinates_ships['horizontal_ship'].append(0)
+        else:
+            self.coordinates_ships['horizontal_ship'].append(0)
         self.coordinates_ships['end_x'].append(end_ship_x)
         self.coordinates_ships['end_y'].append(end_ship_y)
 
@@ -110,7 +93,8 @@ class Ship:
                         continue
                     k = n
 
-                    self.return_coordinates_ships(n, begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
+                    CoordinatesOfShips(player.name).get_coordinates(n, begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
+
 
                     self.ship_start, self.ship_end = [], []
             self.clear_screen(n, player.name, player.grid)
