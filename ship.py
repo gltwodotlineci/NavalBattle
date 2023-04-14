@@ -9,9 +9,8 @@ class Ship:
             self.player2 = player2
             self.dimention_game = dimention_game
             self.ship_start, self.ship_end  = [], []
-            self.coordinates = None
-      
-           
+            self.coord_x = None
+
 
     def creat_ship(self, grid):
         try:
@@ -47,9 +46,10 @@ class Ship:
 
     def create_ships(self,):
 
+
         for player in [self.player1, self.player2]:
             print("_____________________"); print("Hi "+player.name+" you can start creating your three ships"); print("_____________________");
-            for n in range(1,4):
+            for n in range(1,2):
                 k = n -1
                 while k < n:
                     begining_ship_x =  InteractConditions(player.name, n).coordinate_conditions(self.dimention_game, 1, "of the begining of yur ship "+str(n)+": ")
@@ -80,11 +80,13 @@ class Ship:
                     k = n
                     x, y = {}, {}
                     if self.player1:
-                        x = CoordinatesOfShips().get_coordinates(n, begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
+                        self.coord_x = CoordinatesOfShips().get_coordinates(n, begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
                     else:
                         y = CoordinatesOfShips().get_coordinates(n, begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)                        
 
                     self.ship_start, self.ship_end = [], []
             self.clear_screen(n, player.name, player.grid)
+
+        return {self.player1.name:self.coord_x, self.player2.name: y}
         
-        self.coordinates = CoordinatesOfShips().coord_h(player1=x, player2=y)
+        #self.coordinates = CoordinatesOfShips().coord_h(self.player1, self.player2,x,y)
