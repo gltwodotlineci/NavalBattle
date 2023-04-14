@@ -1,8 +1,7 @@
 
 
 class CoordinatesOfShips:
-    def __init__(self, player_name):
-        self.player_name = player_name
+    def __init__(self,player_name1, player_name2):
         self.coordinates_ships = {
             'ship_nb': [],
             'horizontal': [],
@@ -25,3 +24,11 @@ class CoordinatesOfShips:
         self.coordinates_ships['end_y'].append(end_y)
 
         return self.coordinates_ships
+    
+
+    def coord_h(self,p1, p2):
+        {p1:self.coordinates_ships, p2:self.coordinates_ships}
+    
+
+    def return_coord(self,p1,p2):
+        return self.coord_h()

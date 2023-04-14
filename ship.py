@@ -9,6 +9,8 @@ class Ship:
             self.player2 = player2
             self.dimention_game = dimention_game
             self.ship_start, self.ship_end  = [], []
+            self.coordinates = None
+      
            
 
     def creat_ship(self, grid):
@@ -41,22 +43,6 @@ class Ship:
             while clear_screen != 'h':
                 clear_screen = input(" Press 'h' to hide your ship field and to continu ")
             os.system('clear')
-
-
-
-    def return_coordinates_ships(self,nb_ship, start_ship_x, start_ship_y, end_ship_x, end_ship_y):
-        self.coordinates_ships['ship_number'].append(nb_ship)
-        self.coordinates_ships['start_x'].append(start_ship_x)
-        self.coordinates_ships['start_y'].append(start_ship_y)
-        if start_ship_x == end_ship_x:
-            self.coordinates_ships['horizontal_ship'].append(1)
-        else:
-            self.coordinates_ships['horizontal_ship'].append(0)
-        self.coordinates_ships['end_x'].append(end_ship_x)
-        self.coordinates_ships['end_y'].append(end_ship_y)
-
-        return self.coordinates_ships
-
 
 
     def create_ships(self,):
@@ -92,10 +78,13 @@ class Ship:
                         k = n -1; self.ship_start, self.ship_end = [], []
                         continue
                     k = n
-
-                    CoordinatesOfShips(player.name).get_coordinates(n, begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
-
+                    x, y = {}, {}
+                    if self.player1:
+                        x = CoordinatesOfShips().get_coordinates(n, begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)
+                    else:
+                        y = CoordinatesOfShips().get_coordinates(n, begining_ship_x, begining_ship_y, end_ship_x, end_ship_y)                        
 
                     self.ship_start, self.ship_end = [], []
             self.clear_screen(n, player.name, player.grid)
-
+        
+        self.coordinates = CoordinatesOfShips().coord_h(player1=x, player2=y)
