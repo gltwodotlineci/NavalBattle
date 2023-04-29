@@ -60,7 +60,6 @@ class Ship:
 
     def create_ships(self,):
 
-
         for player in [self.player1, self.player2]:
             print("_____________________"); print("Hi "+player.name+" you can start creating your three ships"); print("_____________________");
             for n in range(1,3):
