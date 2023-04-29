@@ -87,7 +87,7 @@ class Fighting:
                     self.missile_coordinate.append(ele)
 
                 xy[index] = Attack(hit.grid, self.missile_coordinate).result_attack()
-                #DetectDestrutedShip(hit.name, hit.grid).check(self.coordinates_ship)
+                DetectDestrutedShip(hit.name, hit.grid).check(self.coordinates_ship)
                 self.show_ennemy_grid(xy[index], xy_show[index])
                 xy_show[index] = []
 
